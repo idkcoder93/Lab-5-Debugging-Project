@@ -28,7 +28,7 @@ void Developer::setAge(int age) {
 
 Developer::~Developer() {
 	
-	//delete age;
+	//delete age; // when commenting out the delete it fixes the issue 
 }
 
 
