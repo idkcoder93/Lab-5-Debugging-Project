@@ -3,14 +3,14 @@
 
 Location::Location(int latitude, int longitude) { // changed data type in header and cpp file
 	cout << "Created Location object" << endl;
-	this->latitude = latitude; // changed variables
+	this->latitude = latitude; // changed variable to equal the correct lvalue
 	this->longitude = longitude;
 
 }
 
 int Location::getLatitude() {
 
-	return latitude; // wrong data member was used latitude
+	return latitude; // wrong data member was used latitude not longitude
 
 }
 
@@ -22,14 +22,12 @@ int Location::getLongitude() {
 
 void Location::setLatitude(int latitude) {
 
-	this->latitude = latitude; // data members were not in the correct function
+	this->latitude = latitude; // linked correct data members
 }
 
 void Location::setLongitude(int longitude) {
 
-	this->longitude = longitude;
-	//this->longitude = longitude;  // line was duplicated
-
+	this->longitude = longitude; // line was duplicated, removed line
 }
 
 // **********************************************************************************************
@@ -39,7 +37,7 @@ void Location::setLongitude(int longitude) {
 // **********************************************************************************************
 double Location::distanceFrom(Location& location) { 
 
-	return sqrt(pow(this->latitude - location.latitude, 4)) - pow(this->longitude - location.longitude, 2);
+	return sqrt(pow(this->latitude - location.latitude, 4)) + pow(this->longitude - location.longitude, 2); // formula was incorrect distance of coordinates needed to be added
 
 }
 

@@ -6,8 +6,8 @@ private:           // changed to private
 	int* age;
 public:
 	Developer(int age);
-	Developer(Developer& rhs);
+	Developer(const Developer& rhs);
 	int getAge();
-	void setAge(int age);
+	void setAge(int age); 
 	~Developer();
 };

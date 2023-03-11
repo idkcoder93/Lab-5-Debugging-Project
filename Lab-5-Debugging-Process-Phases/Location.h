@@ -12,7 +12,7 @@ public:
 	void setLatitude(int age);
 	void setLongitude(int age);
 	double distanceFrom(Location& location); 
-	friend ostream& operator << (ostream& cout, Location& loc); // added cout operator 
+	friend ostream& operator << (ostream& cout, Location& loc); // added cout operator signature 
 
 };
 

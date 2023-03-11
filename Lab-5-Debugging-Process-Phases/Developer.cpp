@@ -7,10 +7,10 @@ Developer::Developer(int age) {
 	*this->age = age;
 }
 
-Developer::Developer(Developer& rhs) {
+Developer::Developer(const Developer& rhs) {
 
 	cout << "Copy Developer object" << endl;
-	age = rhs.age;
+	age = new int(*rhs.age); // allocating memory in the copy constructor
 
 }
 
@@ -27,8 +27,6 @@ void Developer::setAge(int age) {
 }
 
 Developer::~Developer() {
-	
-	//delete age; // when commenting out the delete it fixes the issue 
+
+	delete age;
 }
-
-
