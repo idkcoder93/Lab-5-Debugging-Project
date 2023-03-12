@@ -8,16 +8,21 @@ Location::Location(int latitude, int longitude) { // changed data type in header
 
 }
 
+Location::~Location() = default; // created destructor memory isnt allocated to heap set to default
+
+Location::Location(Location& temp) {  // copy constructor created
+	this->latitude = temp.latitude;
+	this->longitude = temp.longitude;
+}
+
 int Location::getLatitude() {
 
 	return latitude; // wrong data member was used latitude not longitude
-
 }
 
 int Location::getLongitude() {
 
 	return longitude;
-
 }
 
 void Location::setLatitude(int latitude) {

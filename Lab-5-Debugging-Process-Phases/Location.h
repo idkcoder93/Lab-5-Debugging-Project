@@ -7,6 +7,8 @@ private:        // changed data members to private
 	int longitude;  // changed data member to int
 public:
 	Location(int latitude, int longitude); // changed data type to int (longitude)
+	Location(Location& loc); // created copy constructor
+	~Location(); // created destructor
 	int getLatitude();
 	int getLongitude();
 	void setLatitude(int age);

@@ -10,7 +10,7 @@ Developer::Developer(int age) {
 Developer::Developer(const Developer& rhs) {
 
 	cout << "Copy Developer object" << endl;
-	age = new int(*rhs.age); // allocating memory in the copy constructor
+	this->age = new int(*rhs.age); // allocating memory in the copy constructor
 
 }
 
