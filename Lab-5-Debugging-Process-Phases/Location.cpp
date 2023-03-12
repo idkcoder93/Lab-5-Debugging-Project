@@ -1,5 +1,7 @@
 #include"Location.h"
 #include<iostream>
+#include <cmath>
+#define M_PI        3.14
 
 Location::Location(int latitude, int longitude) { // changed data type in header and cpp file
 	cout << "Created Location object" << endl;
@@ -40,11 +42,33 @@ void Location::setLongitude(int longitude) {
 // in our requirements we **accept** the simple distance calculation 
 // based on the formula found in  https://www.cuemath.com/geometry/distance-between-two-points/
 // **********************************************************************************************
-double Location::distanceFrom(Location& location) { 
+
+/*double Location::distanceFrom(Location& location) {
 
 	return sqrt(pow(this->latitude - location.latitude, 4)) + pow(this->longitude - location.longitude, 2); // formula was incorrect distance of coordinates needed to be added
 
+}*/
+
+//Euclidean Distance (formula found in link)
+double Location::distanceFrom(Location& location) {
+	return sqrt(pow(this->latitude - location.latitude, 2) + pow(this->longitude - location.longitude, 2));
 }
+
+/*
+//Haversine Distance
+double Location::distanceFrom(Location& location) {
+	const double R = 6371.0; // Earth radius in km
+	double lat1_rad = latitude * M_PI / 180.0;
+	double long1_rad = longitude * M_PI / 180.0;
+	double lat2_rad = location.latitude * M_PI / 180.0;
+	double long2_rad = location.longitude * M_PI / 180.0;
+	double sin_lat = sin((lat2_rad - lat1_rad) / 2.0);
+	double sin_long = sin((long2_rad - long1_rad) / 2.0);
+	double a = sin_lat * sin_lat + cos(lat1_rad) * cos(lat2_rad) * sin_long * sin_long;
+	double c = 2.0 * asin(sqrt(a));
+	return R * c;
+}
+*/
 
 ostream& operator << (ostream& cout, Location& loc) // added assignment operator 
 {
