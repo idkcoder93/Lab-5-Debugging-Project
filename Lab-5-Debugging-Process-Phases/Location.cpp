@@ -48,22 +48,6 @@ double Location::distanceFrom(Location& location) {
 	return sqrt(pow(this->latitude - location.latitude, 2) + pow(this->longitude - location.longitude, 2));  // formula was corrected sqrt((x1-x2)^2 + (y1-y2)^2)
 }
 
-/*   different version of calculating distance of coordinates 
-Haversine Distance
-double Location::distanceFrom(Location& location) {
-	const double R = 6371.0; // Earth radius in km
-	double lat1_rad = latitude * M_PI / 180.0;
-	double long1_rad = longitude * M_PI / 180.0;
-	double lat2_rad = location.latitude * M_PI / 180.0;
-	double long2_rad = location.longitude * M_PI / 180.0;
-	double sin_lat = sin((lat2_rad - lat1_rad) / 2.0);
-	double sin_long = sin((long2_rad - long1_rad) / 2.0);
-	double a = sin_lat * sin_lat + cos(lat1_rad) * cos(lat2_rad) * sin_long * sin_long;
-	double c = 2.0 * asin(sqrt(a));
-	return R * c;
-}
-*/
-
 ostream& operator << (ostream& cout, Location& loc) // added assignment operator 
 {
 	cout << loc.longitude << loc.latitude << endl;
