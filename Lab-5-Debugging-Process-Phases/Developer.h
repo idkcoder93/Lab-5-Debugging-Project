@@ -3,7 +3,7 @@
 using namespace std;
 class Developer {
 private:           // changed to private
-	int* age = new int;
+	int* age;
 public:
 	Developer(int age);
 	Developer(const Developer& rhs);

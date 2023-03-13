@@ -1,7 +1,7 @@
 #include"Location.h"
 #include<iostream>
 #include <cmath>
-#define M_PI        3.14
+
 
 Location::Location(int latitude, int longitude) { // changed data type in header and cpp file
 	cout << "Created Location object" << endl;
@@ -42,12 +42,6 @@ void Location::setLongitude(int longitude) {
 // in our requirements we **accept** the simple distance calculation 
 // based on the formula found in  https://www.cuemath.com/geometry/distance-between-two-points/
 // **********************************************************************************************
-
-/*double Location::distanceFrom(Location& location) {
-
-	return sqrt(pow(this->latitude - location.latitude, 4)) + pow(this->longitude - location.longitude, 2); 
-
-}*/
 
 //Euclidean Distance (formula found in link)
 double Location::distanceFrom(Location& location) {

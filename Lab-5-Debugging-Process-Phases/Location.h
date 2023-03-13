@@ -11,8 +11,8 @@ public:
 	~Location(); // created destructor
 	int getLatitude();
 	int getLongitude();
-	void setLatitude(int age);
-	void setLongitude(int age);
+	void setLatitude(int latitude); // incorrect variable name
+	void setLongitude(int longitude); // incorrect variable name
 	double distanceFrom(Location& location); 
 	friend ostream& operator << (ostream& cout, Location& loc); // added cout operator signature 
 
