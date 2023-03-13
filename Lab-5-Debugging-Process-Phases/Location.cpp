@@ -45,17 +45,17 @@ void Location::setLongitude(int longitude) {
 
 /*double Location::distanceFrom(Location& location) {
 
-	return sqrt(pow(this->latitude - location.latitude, 4)) + pow(this->longitude - location.longitude, 2); // formula was incorrect distance of coordinates needed to be added
+	return sqrt(pow(this->latitude - location.latitude, 4)) + pow(this->longitude - location.longitude, 2); 
 
 }*/
 
 //Euclidean Distance (formula found in link)
 double Location::distanceFrom(Location& location) {
-	return sqrt(pow(this->latitude - location.latitude, 2) + pow(this->longitude - location.longitude, 2));
+	return sqrt(pow(this->latitude - location.latitude, 2) + pow(this->longitude - location.longitude, 2));  // formula was corrected sqrt((x1-x2)^2 + (y1-y2)^2)
 }
 
-/*
-//Haversine Distance
+/*   different version of calculating distance of coordinates 
+Haversine Distance
 double Location::distanceFrom(Location& location) {
 	const double R = 6371.0; // Earth radius in km
 	double lat1_rad = latitude * M_PI / 180.0;
