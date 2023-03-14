@@ -2,14 +2,14 @@
 #include<iostream>
 
 Developer::Developer(int age) {
-	cout << "Created Developer object" << endl;
+	std::cout << "Created Developer object" << std::endl;
 	this->age = new int;
 	*this->age = age;
 }
 
 Developer::Developer(const Developer& rhs) {
 
-	cout << "Copy Developer object" << endl;
+	std::cout << "Copy Developer object" << std::endl;
 	this->age = new int(*rhs.age); // allocating memory in the copy constructor
 
 }

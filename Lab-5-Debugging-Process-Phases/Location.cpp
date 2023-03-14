@@ -4,7 +4,7 @@
 
 
 Location::Location(int latitude, int longitude) { // changed data type in header and cpp file
-	cout << "Created Location object" << endl;
+	std::cout << "Created Location object" << std::endl;
 	this->latitude = latitude; // changed variable to equal the correct lvalue
 	this->longitude = longitude;
 
@@ -48,9 +48,9 @@ double Location::distanceFrom(Location& location) {
 	return sqrt(pow(this->latitude - location.latitude, 2) + pow(this->longitude - location.longitude, 2));  // formula was corrected sqrt((x1-x2)^2 + (y1-y2)^2)
 }
 
-ostream& operator << (ostream& cout, Location& loc) // added assignment operator 
+std::ostream& operator << (std::ostream& cout, Location& loc) // added assignment operator 
 {
-	cout << loc.longitude << loc.latitude << endl;
+	std::cout << loc.longitude << loc.latitude << std::endl;
 	return cout;
 }
 

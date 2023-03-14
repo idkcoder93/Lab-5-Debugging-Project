@@ -1,6 +1,7 @@
 #pragma once
-#include <iostream>
-using namespace std;
+
+// no need to use namespace nor libraries in header files
+
 class Developer {
 private:           // changed to private
 	int* age;

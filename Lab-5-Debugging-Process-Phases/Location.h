@@ -1,6 +1,7 @@
 #pragma once
-#include <iostream>
-using namespace std;
+#include<iostream>
+// no need to use namespace poor practice
+
 class Location {
 private:        // changed data members to private 
 	int latitude;  // changed data member to int
@@ -14,7 +15,6 @@ public:
 	void setLatitude(int latitude); // incorrect variable name
 	void setLongitude(int longitude); // incorrect variable name
 	double distanceFrom(Location& location); 
-	friend ostream& operator << (ostream& cout, Location& loc); // added cout operator signature 
-
+	friend std::ostream& operator << (std::ostream& cout, Location& loc); // added operator signature 
 };
 
